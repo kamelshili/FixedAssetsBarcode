@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
+             x:Class="FixedAssets_BarCode.Views.UploadList" >
+    <ContentPage.Content>
+        <StackLayout Padding="10" Spacing="5">
+            <dxe:TextEdit x:Name="txt_search" PlaceholderText="Search By AssetNo" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+            <dxg:DataGridView x:Name="listViewUploads"  VerticalOptions="FillAndExpand" BackgroundColor="WhiteSmoke" >
+                <dxg:DataGridView.Columns>
+                    <dxg:TextColumn FieldName="AssetNo" Caption="Asset No" Width="150" AutoFilterCondition="Contains"></dxg:TextColumn>
+                    <dxg:TextColumn  FieldName="Item_" Caption="Item" Width="150" AutoFilterCondition="Contains"></dxg:TextColumn>
+                    <dxg:TextColumn  FieldName="Description" Caption="Description" Width="150" AutoFilterCondition="Contains"></dxg:TextColumn>
+                    <dxg:TextColumn  FieldName="ToSite" Caption="ToSite" Width="150" AutoFilterCondition="Contains"></dxg:TextColumn>
+                    <dxg:TextColumn  FieldName="ToBinLoc" Caption="ToBinLoc" Width="150" AutoFilterCondition="Contains"></dxg:TextColumn>
+                    <dxg:TextColumn  FieldName="SerialNumber" Caption="SerialNumber" Width="150" AutoFilterCondition="Contains"></dxg:TextColumn>
+                </dxg:DataGridView.Columns>
+            </dxg:DataGridView>
+            <StackLayout Orientation="Horizontal" Spacing="5" Padding="10">
+                <dxco:SimpleButton x:Name="Btn_Delete_One" Text="Effacer un par un" BackgroundColor="#33E0FF"/>
+                <dxco:SimpleButton x:Name="Btn_Delete_All" Text="Effacer tout" HorizontalOptions="FillAndExpand" BackgroundColor="#33E0FF"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

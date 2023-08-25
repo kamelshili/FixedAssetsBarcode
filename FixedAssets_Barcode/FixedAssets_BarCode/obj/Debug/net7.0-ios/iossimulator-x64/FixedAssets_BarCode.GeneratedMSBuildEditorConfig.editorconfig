@@ -1,0 +1,65 @@
+is_global = true
+build_property.TargetFramework = net7.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = FixedAssets_BarCode
+build_property.ProjectDir = E:\APPLICATION\APPLICATION\MAUI\THEATHRE DE LOPERA\FixedAssets_BarCode\FixedAssets_BarCode\
+
+[E:/APPLICATION/APPLICATION/MAUI/THEATHRE DE LOPERA/FixedAssets_BarCode/FixedAssets_BarCode/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FixedAssets_BarCode.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[E:/APPLICATION/APPLICATION/MAUI/THEATHRE DE LOPERA/FixedAssets_BarCode/FixedAssets_BarCode/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FixedAssets_BarCode.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[E:/APPLICATION/APPLICATION/MAUI/THEATHRE DE LOPERA/FixedAssets_BarCode/FixedAssets_BarCode/Views/InventoryList.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FixedAssets_BarCode.Views.InventoryList.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\InventoryList.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\InventoryList.xaml
+
+[E:/APPLICATION/APPLICATION/MAUI/THEATHRE DE LOPERA/FixedAssets_BarCode/FixedAssets_BarCode/Views/ListDesc.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FixedAssets_BarCode.Views.ListDesc.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ListDesc.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ListDesc.xaml
+
+[E:/APPLICATION/APPLICATION/MAUI/THEATHRE DE LOPERA/FixedAssets_BarCode/FixedAssets_BarCode/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FixedAssets_BarCode.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
+
+[E:/APPLICATION/APPLICATION/MAUI/THEATHRE DE LOPERA/FixedAssets_BarCode/FixedAssets_BarCode/Views/Setting.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FixedAssets_BarCode.Views.Setting.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Setting.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Setting.xaml
+
+[E:/APPLICATION/APPLICATION/MAUI/THEATHRE DE LOPERA/FixedAssets_BarCode/FixedAssets_BarCode/Views/UploadList.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FixedAssets_BarCode.Views.UploadList.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UploadList.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UploadList.xaml
+
+[E:/APPLICATION/APPLICATION/MAUI/THEATHRE DE LOPERA/FixedAssets_BarCode/FixedAssets_BarCode/Views/VHome.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FixedAssets_BarCode.Views.VHome.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\VHome.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\VHome.xaml
+
+[E:/APPLICATION/APPLICATION/MAUI/THEATHRE DE LOPERA/FixedAssets_BarCode/FixedAssets_BarCode/Views/VSetting.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FixedAssets_BarCode.Views.VSetting.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\VSetting.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\VSetting.xaml

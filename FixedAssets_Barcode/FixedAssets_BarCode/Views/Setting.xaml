@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             x:Class="FixedAssets_BarCode.Views.Setting"
+             Title="Setting">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                x:Name="Lbl_Key"
+                Text="Key"
+                TextColor="Black"
+                FontAttributes="Bold"
+                HorizontalOptions="StartAndExpand" />
+                <dxe:TextEdit x:Name="Entry_Key" HorizontalOptions="FillAndExpand" IsEnabled="True"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label
+                x:Name="Lbl_Licence"
+                Text="Licence"
+                TextColor="Black"
+                FontAttributes="Bold"
+                HorizontalOptions="StartAndExpand" />
+                <!--MaxLength=""-->
+                <dxe:TextEdit x:Name="Entry_Licence" Keyboard="Numeric"  WidthRequest="170" HorizontalOptions="FillAndExpand" Focused="Entry_Licence_Focused" Unfocused="Entry_Licence_Unfocused"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Spacing="10" Padding="20">
+                <dxco:SimpleButton x:Name="Btn_valider" Text="Valider" BackgroundColor="DeepSkyBlue" TextColor="White"  Clicked="Btn_valider_Clicked"/>
+                <dxco:SimpleButton x:Name="Btn_fermer" Text="Fermer" BackgroundColor="DeepSkyBlue" TextColor="White" Clicked="Btn_fermer_Clicked"/>
+
+            </StackLayout>
+            <Label x:Name="Lbl_demo" Text="Licence Valide" TextColor="Green" IsVisible="False" FontAttributes="Bold" FontSize="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

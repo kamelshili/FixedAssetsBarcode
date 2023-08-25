@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+            xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
+            xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+            x:Name="MyTabbedPage"
+            x:Class="FixedAssets_BarCode.Views.InventoryList">
+
+    <!--Pages can be added as references or inline-->
+    <!--Pages can be added as references or inline-->
+    <ContentPage  Title="Location" >
+        <ContentPage.BindingContext>
+            <local:InventoryViewModel xmlns:local="clr-namespace:FixedAssets_BarCode.ViewModels"/>
+        </ContentPage.BindingContext>
+        <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Spacing="0" CompressedLayout.IsHeadless="true">
+            <StackLayout  x:Name="PickerSiteBinLoc"  Orientation="Vertical" >
+                <StackLayout Orientation="Vertical" Padding="8" >
+                    <!--<Label x:Name="Lbl_Site" Text="Emplacement" HorizontalOptions="Fill" />-->
+                    <dxe:ComboBoxEdit                         
+                                x:Name="searchResultsSite"
+                                DisplayMember="Site"
+                                ItemsSource="{Binding AllSites, Mode=TwoWay}"
+                                SelectedItem="{Binding SiteSelected, Mode=TwoWay}"                           
+                                HorizontalOptions="Fill"
+                                LabelText="Sélectionner L'Emplacement" >
+                        <dxe:ComboBoxEdit.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="*,*,*">
+                                    <Label Padding="10" Text="{Binding Site}" FontAttributes="Bold" />
+                                </Grid>
+                            </DataTemplate>
+                        </dxe:ComboBoxEdit.ItemTemplate>
+                    </dxe:ComboBoxEdit>
+                </StackLayout>
+                <StackLayout Orientation="Vertical"  Padding="8"  >
+                    <!--<Label x:Name="Lbl_BinLoc" Text="Sous Emplacement"  HorizontalOptions="Fill"/>-->
+                    <dxe:ComboBoxEdit
+                                x:Name="searchResultsBinLoc"
+                                DisplayMember="BinLoc"
+                                ItemsSource="{Binding AllLocations, Mode=TwoWay}"
+                                SelectedItem="{Binding LocationSelected}"
+                                HorizontalOptions="Fill"                            
+                                LabelText="Sélectionner Le sous Emplacement" >
+                        <dxe:ComboBoxEdit.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="*,*,*">
+                                    <Label Padding="10" Text="{Binding BinLoc}" FontAttributes="Bold" />
+                                </Grid>
+                            </DataTemplate>
+                        </dxe:ComboBoxEdit.ItemTemplate>
+                    </dxe:ComboBoxEdit>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage x:Name="cpTHEORIQUE" Title="THEORIQUE" >
+        <ContentPage.BindingContext>
+            <local:InventoryViewModel xmlns:local="clr-namespace:FixedAssets_BarCode.ViewModels" />
+        </ContentPage.BindingContext>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="0" CompressedLayout.IsHeadless="true">
+                <StackLayout Orientation="Vertical" BackgroundColor="#cccccc" Padding="5,5,5,0" Margin="0">
+                    <StackLayout Orientation="Horizontal" BackgroundColor="#cccccc" Padding="5,5,5,0" Margin="0">
+                        <Label Text="TOTAL" FontSize="Micro" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" BackgroundColor="#cccccc" Padding="5,5,5,0" Margin="0">
+                        <Label x:Name="lbl_Count" Text="{Binding Count,Mode=TwoWay}" FontSize="Medium"  VerticalOptions="CenterAndExpand"/>
+                        <dxe:TextEdit x:Name="txt_search"  PlaceholderText="Search By AssetNo" IsVisible="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <dxg:DataGridView x:Name="listView"  VerticalOptions="FillAndExpand"  ItemsSource="{Binding AllInventory, Mode=TwoWay}"  
+                         BackgroundColor="WhiteSmoke" IsVisible="{Binding listAvailable}"  Tap="listView_ItemSelected" >
+                        <dxg:DataGridView.Columns>
+                            <dxg:TextColumn FieldName="AssetNo" Caption="AssetNo" AutoFilterCondition="Contains"></dxg:TextColumn>
+                            <dxg:TextColumn FieldName="Description" Caption="Description" AutoFilterCondition="Contains"></dxg:TextColumn>
+                        </dxg:DataGridView.Columns>
+                        <!--<TextCell Text="{Binding AssetNo}" Detail="{Binding Description}" Height="60"/>-->
+                    </dxg:DataGridView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+
+       
+    <ContentPage  x:Name="cpPHYSIQUE" Title="PHYSIQUE" >
+        <ScrollView x:Name="myscrollview" >
+            <StackLayout>
+                <StackLayout Spacing="3" Padding="15" >
+                    <!--<Label Text="AssetNo :" FontSize="Medium" />-->
+                    <dxe:TextEdit x:Name="Entry_Immo" LabelText="AssetNo :" Text="{Binding AssetNo, Mode=TwoWay}" Focused="Entry_Immo_Focused" Unfocused="Entry_Immo_Unfocused"    Completed="Entry_Immo_Completed" TextFontSize="Medium"  />
+                    <!--<Label Text="DESCRIPTION : " FontSize="Medium" />-->
+                    <StackLayout Orientation="Horizontal">
+                        <dxe:ComboBoxEdit x:Name="Picker_Disc" LabelText="DESCRIPTION" IsEnabled="False" Focused="Picker_Disc_Focused" Unfocused="Picker_Disc_Unfocused"  ItemsSource="{Binding ListItems, Mode=TwoWay}" DisplayMember="{Binding Description, Mode=TwoWay}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" SelectionChanged="Picker_Disc_SelectedIndexChanged"  TextFontSize="Medium" Margin="0" HorizontalOptions="FillAndExpand"  />
+                        <ImageButton x:Name="Img_Button_Filter_Desc" Source="search.png" Clicked="Img_Button_Filter_Desc_Clicked"   BackgroundColor="White"/>
+                    </StackLayout>
+                    <!--<Label Text="Statut :" FontSize="Medium" />-->
+                    <dxe:ComboBoxEdit x:Name="Picker_Etat" LabelText="Statut" Focused="Picker_Etat_Focused" Unfocused="Picker_Etat_Unfocused" ItemsSource="{Binding ListEtats, Mode=TwoWay}"  SelectedItem="{Binding SelectedEtat}"    SelectionChanged="Picker_Etat_SelectedIndexChanged" TextFontSize="Medium" Margin="0"   IsEnabled="False"/>
+                    <!--<Label Text="N°Serie :" FontSize="Medium" />-->
+                    <dxe:TextEdit x:Name="Entry_NSerie" LabelText="N°Serie"  Text="{Binding Num_Serie, Mode=TwoWay}" Focused="Entry_NSerie_Focused" Unfocused="Entry_NSerie_Unfocused"     TextFontSize="Medium" Margin="0"   IsEnabled="False"/>
+                    <StackLayout Orientation="Horizontal" Padding="10" Spacing="8">
+                        <dxco:SimpleButton x:Name="btn_cancel" Text="Cancel" Command="{Binding CancelCommand}" Clicked="btn_cancel_Clicked"  HorizontalOptions="FillAndExpand"  BackgroundColor="#33E0FF" />
+                        <dxco:SimpleButton x:Name="btn_save" Text="Save" Command="{Binding ValidateTagItem}" CommandParameter="{Binding Source={x:Reference PickerSiteBinLoc}}" Clicked="btn_save_Clicked"  HorizontalOptions="FillAndExpand" BackgroundColor="#33E0FF" IsEnabled="False"></dxco:SimpleButton>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Label x:Name="labelcr2" Text="COPYRIGHT © TUNITRACK 2023" CharacterSpacing="4" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"  BackgroundColor="Gray" VerticalOptions="EndAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+</TabbedPage>
